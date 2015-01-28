@@ -60,8 +60,8 @@ class sql {
             }
         }
 
-        if (DEBUG) {
-            echo "<pre>$query</pre>";
+        if ( DEBUG ) {
+            echo "<pre style='margin-top: 100px;'>$query</pre>";
             echo "<pre>";
             var_dump($this->data);
             echo "</pre>";

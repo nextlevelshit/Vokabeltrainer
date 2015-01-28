@@ -6,7 +6,7 @@
  * Time: 01:33
  */
 
-define("DEBUG", (boolean) $_REQUEST['debug']);
+define("DEBUG",             (boolean) $_REQUEST['debug']);
 
 define("_PAGE",             (string) $_REQUEST['page']);
 define("_LANGUAGE",         (int) $_REQUEST['lang']);

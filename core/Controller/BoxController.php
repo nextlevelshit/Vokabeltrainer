@@ -1,30 +1,31 @@
+
+
 <?php
 /**
- * Vokabeltrainer v0.1
+ * Created by PhpStorm.
  * User: nextlevelshit
- * Date: 28.01.15
- * Time: 19:52
+ * Date: 30.10.14
+ * Time: 19:35
  */
 
 $sql = new sql();
 
 $languages = array();
 
+//$sql->query("SELECT * FROM `languages` ORDER BY `language`");
 $sql->query("
 SELECT
 	lp.`language_pair_id`,
-	concat(l.`language_id`) as 'language_id',
+    concat(lp.`language_id_1`) as 'language_id',
     l.`language`,
     concat(l.`flag`) as 'language_flag',
     concat(t.`language`) as 'translation_language',
-    concat(t.`language_id`) as 'translation_id',
     concat(t.`flag`) as 'translation_flag'
 FROM `language_pairs` lp
     LEFT JOIN `languages` l
-    	ON ( lp.`language_id_1` = l.`language_id` OR lp.`language_id_2` = l.`language_id` )
+    	ON ( lp.`language_id_1` = l.`language_id` )
     LEFT JOIN `languages` t
-    	ON ( lp.`language_id_2` = t.`language_id` OR lp.`language_id_1` = t.`language_id` )
-WHERE l.`language_id` != t.`language_id`
+    	ON ( lp.`language_id_2` = t.`language_id` )
 ");
 $i = 0;
 
@@ -40,8 +41,3 @@ foreach($sql->data as $key => $value)
 }
 
 $smarty->assign("language_pairs", $language_pairs);
-
-
-
-
-//$smarty->assign("boxes", $boxes);

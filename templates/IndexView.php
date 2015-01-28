@@ -7,6 +7,7 @@
                 <a href="?page=levels&lang={$pair.language_id}" class="greybox {*btn btn-transparent*}">
                     <div class="row">
                         <div class="col-xs-6 text-right">
+
                             {$pair.language}
                             <img src="{$pair.language_flag}" />
                         </div>

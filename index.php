@@ -5,7 +5,6 @@
  * @package Example-application
  */
 header('Content-Type: text/html; charset=UTF-8');
-//error_reporting(E_ALL);
 
 date_default_timezone_set('Europe/Berlin');
 //error_reporting(0);
@@ -15,6 +14,12 @@ require 'inc/FeelConnected.php';
 require 'inc/Navigation.php';
 //require 'core/Controller/ApplicationController.php';
 //require 'core/system.class.php';
+
+if( !DEBUG ) {
+    error_reporting(0);
+} else {
+    error_reporting(E_ALL);
+}
 
 $smarty = new Smarty;
 //$sys = new System;
@@ -48,14 +53,14 @@ switch (_PAGE)
         break;
     case "boxes":
         require 'core/Controller/BoxController.php';
-        $template = 'templates/boxes.tpl';
+        $template = 'templates/BoxView.php';
         break;
     case "edit":
         require 'core/Controller/EditController.php';
         break;
     default:
         require 'core/Controller/IndexController.php';
-        $template = 'templates/index.tpl';
+        $template = 'templates/IndexView.php';
 }
 
 $smarty->display($template);
