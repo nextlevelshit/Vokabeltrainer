@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-01-27 16:56:34
-         compiled from "templates/levels.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:60220624054c64b1adbdc40-67702484%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-01-27 17:18:47
+         compiled from "templates/LanguageView.php" */ ?>
+<?php /*%%SmartyHeaderCode:157175213554c7b6610c17d8-87486046%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '82fb3f4927f55b019fc14c92db518b1fb912776a' => 
+    '745f2b3a92e5670858f54bff2c55c73af8dd2673' => 
     array (
-      0 => 'templates/levels.tpl',
-      1 => 1422306740,
+      0 => 'templates/LanguageView.php',
+      1 => 1422375526,
       2 => 'file',
     ),
     '668cd478807930eebf914750a6b91e89b370d67f' => 
@@ -17,19 +17,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '60220624054c64b1adbdc40-67702484',
+  'nocache_hash' => '157175213554c7b6610c17d8-87486046',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_54c64b1aea47d3_90100059',
+  'unifunc' => 'content_54c7b6611ee488_22246745',
   'variables' => 
   array (
     'alert' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_54c64b1aea47d3_90100059')) {function content_54c64b1aea47d3_90100059($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_54c7b6611ee488_22246745')) {function content_54c7b6611ee488_22246745($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head lang="de">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -98,6 +98,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <nav id="footer__menu">
     <div clas="wrapper">
         
+
     </div>
 </nav>
 
@@ -117,7 +118,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="container">
             <div class="row">
                 <h3>
-    <a href="?page=languages">&laquo; Zurück zur Sprachwahl</a>
+    test
 </h3>
             </div>
         </div>
@@ -128,7 +129,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="row">
             <div class="col-xs-12">
             <p>
-    Bitte wähle eine Stufe, die du gerne üben möchtest.
+    test
 </p>
 
             <div class="alert alert-danger"><?php echo $_smarty_tpl->tpl_vars['alert']->value;?>
@@ -138,32 +139,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </div>
 
     
-    <section class="row levels">
-        <div class="col-sm-6">
-            <ul class="levels__list">
-            <?php  $_smarty_tpl->tpl_vars['box'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['box']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['boxes']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['box']->key => $_smarty_tpl->tpl_vars['box']->value) {
-$_smarty_tpl->tpl_vars['box']->_loop = true;
-?>
-                <li>
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['box']->value['link'];?>
-">
-                        <?php echo $_smarty_tpl->tpl_vars['box']->value['text'];?>
+    <pre>
+        <?php echo var_dump($_smarty_tpl->tpl_vars['all_language_pairs']->value);?>
 
-                        <span class="pull-right"><?php echo $_smarty_tpl->tpl_vars['box']->value['num'];?>
-</span>
-                    </a>
-                </li>
-            <?php } ?>
-            </ul>
-        </div>
-        <div class="col-sm-6">
-            <button class="btn btn-transparent">Neue Karteikarten hinzufügen</button>
-            <div class="margin"></div>
-            <button class="btn btn-transparent">Karteikarten bearbeiten</button>
-        </div>
-    </section>
+    </pre>
 
 </article>
 <footer>
@@ -171,6 +150,7 @@ $_smarty_tpl->tpl_vars['box']->_loop = true;
         <div class="row">
             <div class="col-sm-12 hidden-xs">
                 
+
             </div>
             
                 

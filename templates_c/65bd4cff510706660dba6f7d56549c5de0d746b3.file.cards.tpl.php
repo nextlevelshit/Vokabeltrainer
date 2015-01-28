@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-01-27 13:14:02
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-01-27 17:44:37
          compiled from "templates/cards.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:209577680554c6bbac59abe7-09224656%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '668cd478807930eebf914750a6b91e89b370d67f' => 
     array (
       0 => './templates/_layout.tpl',
-      1 => 1422360781,
+      1 => 1422373459,
       2 => 'file',
     ),
   ),
@@ -257,22 +257,14 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
     </ul>
 
             </div>
-            <div class="visible-xs">
-                <ul>
-                    <li><a href="#footer__menu" class="footer__menu__open">Optionen</a></li>
-                </ul>
-                <ul id="footer__menu">
+            
+                
                     
-    <ul>
-        <li>
-            <a id="card_stats"><?php echo $_smarty_tpl->tpl_vars['language_name']->value;?>
- &raquo; <span id="current_card_num">1</span> / <?php echo $_smarty_tpl->tpl_vars['cards_num']->value;?>
-</a>
-        </li>
-    </ul>
-
-                </ul>
-            </div>
+                
+                
+                    
+                
+            
         </div>
     </div>
 </footer>

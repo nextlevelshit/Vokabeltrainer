@@ -884,3 +884,18 @@ ul.search__list li a {
     text-shadow: 0 0 2px rgba(0,0,0,0.1);
 }
 
+/*
+ *
+ * Styling Elements
+ *
+ */
+
+.greybox {
+    display: block;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
+}

@@ -1,18 +1,17 @@
 {extends file="_layout.tpl"}
 
 {block name="content"}
-    <section class="row languages lined">
+    <section class="row languages">
 
         {foreach from=$language_pairs item=pair name=pair}
         <div class="col-sm-6 col-xs-12">
-            <div class="">
-                <a href="?page=levels&lang={$pair.language_id}" class="{*btn btn-transparent*}">
+            <div>
+                <a href="?page=levels&lang={$pair.language_id}" class="greybox text-center{*btn btn-transparent*}">
                     <img src="{$pair.language_flag}" />
                     {$pair.language}
                     &rsaquo;
                     <img src="{$pair.translation_flag}" />
                     {$pair.translation}
-
                 </a>
             </div>
             <div class="margin"></div>{*{if !$smarty.foreach.language.last}<hr>{/if}</div>*}
