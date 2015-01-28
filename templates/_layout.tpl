@@ -101,14 +101,14 @@
             <div class="col-sm-12 hidden-xs">
                 {block name="footer"}{/block}
             </div>
-            <div class="visible-xs">
-                <ul>
-                    <li><a href="#footer__menu" class="footer__menu__open">Optionen</a></li>
-                </ul>
-                <ul id="footer__menu">
-                    {block name="footer"}{/block}
-                </ul>
-            </div>
+            {*<div class="visible-xs">*}
+                {*<ul>*}
+                    {*<li><a href="#footer__menu" class="footer__menu__open">Optionen</a></li>*}
+                {*</ul>*}
+                {*<ul id="footer__menu">*}
+                    {*{block name="footer"}{/block}*}
+                {*</ul>*}
+            {*</div>*}
         </div>
     </div>
 </footer>

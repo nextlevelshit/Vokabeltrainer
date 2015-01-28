@@ -13,6 +13,7 @@ require '../libs/Smarty.class.php';
 require 'inc/ConfigYourSelf.php';
 require 'inc/FeelConnected.php';
 require 'inc/Navigation.php';
+//require 'core/Controller/ApplicationController.php';
 //require 'core/system.class.php';
 
 $smarty = new Smarty;
@@ -29,6 +30,17 @@ switch (_PAGE)
     case "levels":
         require 'core/Controller/LevelsController.php';
         $template = 'templates/levels.tpl';
+        break;
+    case "language":
+        require 'core/Controller/LanguageController.php';
+        switch (_ACTION)
+        {
+            case "edit":
+                break;
+            default:
+//                $Controller->DisplayDisplayLanguagePairsToLearn();
+        }
+        $template = 'templates/LanguageView.php';
         break;
     case "cards":
         require 'core/Controller/CardsController.php';
