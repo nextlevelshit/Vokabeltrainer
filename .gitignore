@@ -1,2 +1,4 @@
 # Ignore following files from comit
 /inc/ConfigYourSelf.php
+/templates_c/
+/cache/

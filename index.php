@@ -5,7 +5,7 @@
  * @package Example-application
  */
 header('Content-Type: text/html; charset=UTF-8');
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
 
 date_default_timezone_set('Europe/Berlin');
 //error_reporting(0);
@@ -45,6 +45,10 @@ switch (_PAGE)
     case "cards":
         require 'core/Controller/CardsController.php';
         $template = 'templates/cards.tpl';
+        break;
+    case "boxes":
+        require 'core/Controller/BoxController.php';
+        $template = 'templates/boxes.tpl';
         break;
     case "edit":
         require 'core/Controller/EditController.php';
