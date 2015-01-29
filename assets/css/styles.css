@@ -908,9 +908,45 @@ ul.search__list li a {
 
 .greybox .panel-default .panel-heading {
     border: none;
-    background: #119094;
+    /*background: #119094;*/
+    background: transparent;
+    position: relative;
 }
 
-.greybox .panel-default .panel-body {
+.greybox .panel-default .panel-heading::before {
+    content: "";
+    background-color: #119094;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.greybox .panel-default .panel-heading::after {
+    content: "";
+    background: url("../img/symphony.png");
+    border-radius: 5px;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.greybox .panel-default .panel-heading:hover::after {
+    opacity: 0.6;
+}
+
+.greybox .panel-default .panel-heading a:hover,
+.greybox .panel-default .panel-heading a:focus {
+    color: #fff;
+}
+
+.greybox .panel-default .panel-collapse>.panel-body {
     border: 0;
 }
