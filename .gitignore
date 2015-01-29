@@ -1,5 +1,6 @@
 # Ignore following files from commit
 /inc/ConfigYourSelf.php
-/templates_c/
-/cache/
+/templates_c/*
+/cache/*
 .gitignore
+.idea
