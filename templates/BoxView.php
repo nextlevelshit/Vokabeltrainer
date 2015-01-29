@@ -1,44 +1,38 @@
 {extends file="_layout.tpl"}
 
 {block name="content"}
-    <section class="row languages">
-        {foreach from=$language_pairs item=pair name=pair}
-            <div class="col-sm-6 col-xs-12">
-                <a href="?page=levels&lang={$pair.language_id}" class="greybox {*btn btn-transparent*}">
-                    <div class="row">
-                        <div class="col-xs-6 text-right">
+    <section class="languages">
+        <div class="panel-group greybox" id="accordion" role="tablist" aria-multiselectable="true">
+            {foreach from=$language_pairs key=i item=pair name=pair}
+                {assign var="isFirst" value=""}
+                {if $smarty.foreach.pair.first}
+                    {assign var="isFirst" value="in"}
+                {/if}
 
-                            {$pair.language}
-                            <img src="{$pair.language_flag}" />
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading_{$i}">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse_{$i}" aria-expanded="true" aria-controls="collapse_{$i}">
+
+                        <div class="row">
+                            <div class="col-xs-6 text-right">
+                                {$pair.language}
+                                <img src="{$pair.language_flag}" />
+                            </div>
+                            <div class="col-xs-6">
+                                <img src="{$pair.translation_flag}" />
+                                {$pair.translation}
+                            </div>
                         </div>
-                        <div class="col-xs-6">
-                            <img src="{$pair.translation_flag}" />
-                            {$pair.translation}
+                        </a>
+                    </div>
+                    <div id="collapse_{$i}" class="panel-collapse collapse {$isFirst}" role="tabpanel" aria-labelledby="heading_{$i}">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                         </div>
                     </div>
-                </a>
-                <div class="margin"></div>{*{if !$smarty.foreach.language.last}<hr>{/if}</div>*}
-            </div>
-        {/foreach}
-
-
-        <!--<section class="wrapper">
-            <form action="index.php" method="get">
-                <input type="hidden" name="page" value="edit" />
-                <input type="hidden" name="table" value="languages" />
-                <button class="btn btn-transparent" name="func" value="add">Sprache hinzufügen</button>
-                <div class="margin"></div>
-                <button class="btn btn-transparent" name="func" value="edit">Sprachen bearbeiten</button>
-            </form>
-            <div class="doublemargin"></div>
-            <form action="index.php" method="get">
-                <input type="hidden" name="page" value="edit" />
-                <input type="hidden" name="table" value="words" />
-                <button class="btn btn-transparent" name="func" value="add">Karteikarten hinzufügen</button>
-                <div class="margin"></div>
-                <button class="btn btn-transparent" name="func" value="edit">Karteikarten bearbeiten</button>
-            </form>
-        </section>-->
+                </div>
+            {/foreach}
+        </div>
     </section>
 {/block}
 

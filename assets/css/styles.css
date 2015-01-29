@@ -899,3 +899,18 @@ ul.search__list li a {
     border-radius: 6px;
     box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
 }
+
+.greybox .panel-default {
+    border: none;
+    background: transparent;
+    border-color: rgba(255,255,255,0.4)
+}
+
+.greybox .panel-default .panel-heading {
+    border: none;
+    background: #119094;
+}
+
+.greybox .panel-default .panel-body {
+    border: 0;
+}
