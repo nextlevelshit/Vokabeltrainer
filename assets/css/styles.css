@@ -988,10 +988,14 @@ ul.list__sortable {
 }
 
 ul.list__sortable li {
-    margin: 0;
+    /*margin: 0;*/
     display: inline-block;
-    float: none;
+    /*float: none;*/
     z-index: 100;
+}
+
+ul.list__sortable li.ui-sortable-placeholder {
+    margin-top: 30px;
 }
 
 ul.list__sortable li.ui-sortable {
