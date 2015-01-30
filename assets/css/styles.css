@@ -890,6 +890,10 @@ ul.search__list li a {
  *
  */
 
+.greybox .text-small {
+    font-size: 0.8em;
+}
+
 .greybox {
     display: block;
     padding: 8px 10px;
@@ -900,10 +904,20 @@ ul.search__list li a {
     box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
 }
 
+/*
+ *
+ * Panels
+ *
+ */
+
 .greybox .panel-default {
     border: none;
     background: transparent;
     border-color: rgba(255,255,255,0.4)
+}
+
+.greybox .panel-default .panel-body {
+    padding: 10px 0;
 }
 
 .greybox .panel-default .panel-heading {
@@ -911,6 +925,7 @@ ul.search__list li a {
     /*background: #119094;*/
     background: transparent;
     position: relative;
+    z-index: 200;
 }
 
 .greybox .panel-default .panel-heading::before {
@@ -925,11 +940,15 @@ ul.search__list li a {
     z-index: -1;
 }
 
+.greybox .panel-default .panel-default .panel-heading::before {
+    opacity: 0.3;
+}
+
 .greybox .panel-default .panel-heading::after {
     content: "";
     background: url("../img/symphony.png");
     border-radius: 5px;
-    opacity: 0.3;
+    opacity: 0.6;
     top: 0;
     left: 0;
     bottom: 0;
@@ -939,7 +958,7 @@ ul.search__list li a {
 }
 
 .greybox .panel-default .panel-heading:hover::after {
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .greybox .panel-default .panel-heading a:hover,
@@ -949,4 +968,32 @@ ul.search__list li a {
 
 .greybox .panel-default .panel-collapse>.panel-body {
     border: 0;
+}
+
+.greybox .panel-default .list-group {
+    margin: 0;
+}
+
+/*
+ *
+ * Lists
+ *
+ */
+
+ul.list__sortable {
+    display: block;
+    list-style-type: none;
+    /*overflow: hidden;*/
+    padding: 0;
+}
+
+ul.list__sortable li {
+    margin: 0;
+    display: inline-block;
+    float: none;
+    z-index: 100;
+}
+
+ul.list__sortable li.ui-sortable {
+    /*z-index: 100;*/
 }

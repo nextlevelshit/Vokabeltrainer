@@ -7,18 +7,20 @@
     <!-- CSS -->
     {*<link rel="stylesheet" href="assets/css/bootstrap.css"/>*}
     {*<link rel="stylesheet" href="assets/css/GGS.css"/>*}
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.3.2.0.min.css">
     <link rel="stylesheet" href="assets/css/jquery.mmenu.all.css"/>
+    <link rel="stylesheet" href="assets/css/styles.css"/>
     <!-- JS -->
     <!--<script src="assets/js/GGS.js"></script>-->
     <script src="assets/js/jquery-2.1.1.min.js"></script>
+    <script src="assets/js/jquery.1.12.0-pre.js"></script>
+    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
     <!--<script src="assets/js/bootstrap.min.js"></script>-->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/bootstrap.3.2.0.min.js"></script>
+    <script src="assets/js/scripts.js"></script>jquery
     <script src="assets/js/jquery.mmenu.min.js"></script>
     <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <title>Mein Vokabeltrainer</title>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700|Pacifico&subset=latin,greek-ext,greek,latin-ext,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
