@@ -59,7 +59,7 @@
                                                 {foreach from=$words key=k item=word name=word}
                                                     {if $word.box == $box.box_id AND $word.language == $pair.language_id_1}
                                                         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-draggable>
-                                                            <a href="#" class="greybox text-small">
+                                                            <a class="greybox text-small">
                                                                 {$word.word}
                                                                 <input type="checkbox" class="pull-right" />
                                                             </a>
@@ -82,12 +82,13 @@
     {literal}
         <script>
             $(document).ready(function(){
-                $('ul.list__sortable').sortable();
+                //$('ul.list__sortable').sortable();
 
                 var selectedClass = 'ui-sortable-helper',
-                        clickDelay = 600,
-                // click time (milliseconds)
-                        lastClick, diffClick; // timestamps
+                    clickDelay = 1000, // click time (milliseconds)
+                    droppableClass = 'ul.list__sortable',
+                    draggableClass = 'ul.list__sortable',
+                    lastClick, diffClick; // timestamps
 
                 $("ul.list__sortable li")
                     // Script to deferentiate a click from a mousedown for drag event
@@ -99,22 +100,37 @@
                                 if (diffClick < clickDelay) {
                                     // add selected class to group draggable objects
                                     $(this).toggleClass(selectedClass);
+                                    $('.' + selectedClass).parent().addClass('active');
                                 }
                             }
                         })
                         .draggable({
-                            revertDuration: 10,
+                            revertDuration: 100,
                             // grouped items animate separately, so leave this number low
-                            containment: '.demo',
+                            containment: '.panel-group.greybox',
                             start: function(e, ui) {
                                 ui.helper.addClass(selectedClass);
+                                // open hovered panel while dragging
+
+                                $(e.currentTarget.parentNode).addClass('active');
+//                                console.log();
                             },
                             stop: function(e, ui) {
+                                ui.helper.removeClass(selectedClass);
+                                ui.helper.css({
+                                    top: 0,
+                                    left: 0
+                                });
                                 // reset group positions
                                 $('.' + selectedClass).css({
                                     top: 0,
                                     left: 0
                                 });
+
+                                $('ul.list__sortable.active').removeClass('active');
+                                // unbind opening panel while hovering
+                                $('[aria-controls]').unbind();
+                                $('ul.list__sortable:not(.active)').unbind();
                             },
                             drag: function(e, ui) {
                                 // set selected group position to main dragged object
@@ -123,32 +139,34 @@
                                     top: ui.position.top,
                                     left: ui.position.left
                                 });
+
+                                $('[aria-controls]').bind('mouseover', function() {
+                                    $('#' + $(this).attr('aria-controls')).collapse('show');
+                                });
+
+                                $('ul.list__sortable:not(.active)').bind('mouseenter mouseleave', function(e) {
+                                    console.log(e.type);
+                                    $(this).toggleClass('list__sortable__hover');
+                                });
                             }
                         });
 
-                $("#droppable, #draggable").sortable().droppable({
+                $("ul.list__sortable:not(.active)").sortable().droppable({
                     drop: function(e, ui) {
                         $('.' + selectedClass).appendTo($(this)).add(ui.draggable) // ui.draggable is appended by the script, so add it after
                                 .removeClass(selectedClass).css({
                                     top: 0,
                                     left: 0
                                 });
+                        $(this).removeClass('list__sortable__hover');
                     }
                 });
 
-                $(document).mousedown(function(){
-                    console.log("mousedown");
-                    $('[aria-controls]').mouseover(function() {
-//                        console.log("mousehover " + $(this).attr('aria-controls'));
-//                        $('#' + $(this).attr('aria-controls')).collapse('show');
-                    });
-                });
-
-                $('.list__sortable li').click(function(){
+                /*$('.list__sortable li').click(function(){
                     $(this).find('input').attr('checked', function(index, attr){
                         return attr == 'checked' ? null : 'checked';
                     });
-                });
+                });*/
 
 
             });

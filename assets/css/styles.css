@@ -370,6 +370,10 @@ html.mm-opening #hamburger:after
 
 /* Boxwahl */
 
+.levels h3 {
+    margin-top: 0;
+}
+
 .levels ul {
     margin: 0;
     padding: 0;
@@ -948,7 +952,7 @@ ul.search__list li a {
     content: "";
     background: url("../img/symphony.png");
     border-radius: 5px;
-    opacity: 0.6;
+    opacity: 0.3;
     top: 0;
     left: 0;
     bottom: 0;
@@ -985,6 +989,11 @@ ul.list__sortable {
     list-style-type: none;
     /*overflow: hidden;*/
     padding: 0;
+    margin: -60px -5px 5px -5px;
+    padding-top: 60px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    z-index: 10000;
 }
 
 ul.list__sortable li {
@@ -998,6 +1007,20 @@ ul.list__sortable li.ui-sortable-placeholder {
     margin-top: 30px;
 }
 
-ul.list__sortable li.ui-sortable {
+ul.list__sortable li.ui-sortable-helper {
+
+
     /*z-index: 100;*/
+}
+
+ul.list__sortable li.ui-sortable-helper a {
+    background: #fff;
+    color: #000;
+    text-shadow: none;
+}
+
+ul.list__sortable.list__sortable__hover {
+    background: rgba(255,255,255,0.3);
+    border: 3px dotted rgba(255,255,255,0.8);
+    border-radius: 10px;
 }

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-01-28 19:44:45
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-02-01 21:17:25
          compiled from "templates/levels.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:114605665654529ebc0138e8-22222221%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ebfc53871d7e8f4ec0f2f455926384d80be09f3c' => 
     array (
       0 => './templates/_layout.tpl',
-      1 => 1422470425,
+      1 => 1422802246,
       2 => 'file',
     ),
   ),
@@ -38,9 +38,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <!-- CSS -->
     
     
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.3.2.0.min.css">
     <link rel="stylesheet" href="assets/css/jquery.mmenu.all.css"/>
+    <link rel="stylesheet" href="assets/css/styles.css"/>
     <!-- JS -->
     <!--<?php echo '<script'; ?>
  src="assets/js/GGS.js"><?php echo '</script'; ?>
@@ -48,21 +48,30 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <?php echo '<script'; ?>
  src="assets/js/jquery-2.1.1.min.js"><?php echo '</script'; ?>
 >
+    <?php echo '<script'; ?>
+ src="assets/js/jquery.1.12.0-pre.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="assets/js/jquery.ui.touch-punch.min.js"><?php echo '</script'; ?>
+>
     <!--<?php echo '<script'; ?>
  src="assets/js/bootstrap.min.js"><?php echo '</script'; ?>
 >-->
     <?php echo '<script'; ?>
- src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"><?php echo '</script'; ?>
+ src="assets/js/bootstrap.3.2.0.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  src="assets/js/scripts.js"><?php echo '</script'; ?>
->
+>jquery
     <?php echo '<script'; ?>
  src="assets/js/jquery.mmenu.min.js"><?php echo '</script'; ?>
 >
+    <?php echo '<script'; ?>
+ src="assets/js/jquery.matchHeight.min.js"><?php echo '</script'; ?>
+>
     <!--[if lt IE 9]>
     <?php echo '<script'; ?>
- src="http://html5shim.googlecode.com/svn/trunk/html5.js"><?php echo '</script'; ?>
+ src="//html5shim.googlecode.com/svn/trunk/html5.js"><?php echo '</script'; ?>
 >
     <![endif]-->
     <title>Mein Vokabeltrainer</title>

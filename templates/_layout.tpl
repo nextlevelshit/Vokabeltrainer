@@ -19,6 +19,7 @@
     <script src="assets/js/bootstrap.3.2.0.min.js"></script>
     <script src="assets/js/scripts.js"></script>jquery
     <script src="assets/js/jquery.mmenu.min.js"></script>
+    <script src="assets/js/jquery.matchHeight.min.js"></script>
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

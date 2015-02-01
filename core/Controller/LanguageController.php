@@ -12,6 +12,10 @@ require_once 'ApplicationController.php';
 class LanguageController extends ApplicationController {
     protected $page = 'language';
 
+    function __construct () {
+
+    }
+
     public function DisplayLanguagePairsToLearn() {
 //        $smarty = new Smarty;
 //

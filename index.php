@@ -12,7 +12,7 @@ require '../libs/Smarty.class.php';
 require 'inc/ConfigYourSelf.php';
 require 'inc/FeelConnected.php';
 require 'inc/Navigation.php';
-//require 'core/Controller/ApplicationController.php';
+require 'core/Controller/ApplicationController.php';
 //require 'core/system.class.php';
 
 if( !DEBUG ) {
@@ -35,6 +35,18 @@ switch (_PAGE)
     case "levels":
         require 'core/Controller/LevelsController.php';
         $template = 'templates/levels.tpl';
+        break;
+    case "learning":
+        require 'core/Controller/LearningController.php';
+//        $template = 'templates/LearningView.php';
+        break;
+    case "editing":
+        require 'core/Controller/EditingController.php';
+        $template = 'templates/EditingView.php';
+        break;
+    case "adding":
+        require 'core/Controller/AddingController.php';
+        $template = 'templates/AddingView.php';
         break;
     case "language":
         require 'core/Controller/LanguageController.php';
@@ -59,8 +71,8 @@ switch (_PAGE)
         require 'core/Controller/EditController.php';
         break;
     default:
-        require 'core/Controller/IndexController.php';
-        $template = 'templates/IndexView.php';
+        require 'core/Controller/StartController.php';
+        $template = 'templates/StartView.php';
 }
 
 $smarty->display($template);
