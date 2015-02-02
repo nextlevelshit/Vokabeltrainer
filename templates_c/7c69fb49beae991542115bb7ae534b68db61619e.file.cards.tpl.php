@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-02-01 21:49:28
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-02-02 18:08:51
          compiled from "templates/cards.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8205595254529fa7b3fe66-66301835%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7c69fb49beae991542115bb7ae534b68db61619e' => 
     array (
       0 => 'templates/cards.tpl',
-      1 => 1422465898,
+      1 => 1422896926,
       2 => 'file',
     ),
     'ebfc53871d7e8f4ec0f2f455926384d80be09f3c' => 
@@ -163,7 +163,6 @@ x gelernt
     
     <section class="row">
         <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
-
             <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
             <?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
  $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
@@ -193,6 +192,7 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
                         <h3><?php echo $_smarty_tpl->tpl_vars['item']->value['front'];?>
 </h3>
                         <p></p>
+                        <span class="glyphicon glyphicon-share-alt flip"></span>
                     </div>
                     <div class="lined back">
                         <h3><?php echo $_smarty_tpl->tpl_vars['item']->value['back'];?>

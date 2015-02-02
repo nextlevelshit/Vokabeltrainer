@@ -21,10 +21,9 @@ class LearningController extends ApplicationController {
     }*/
 
     function DisplayBoxesByLanguage ($languagePairId, $languageId) {
-        $this->SetBreadcrumb("<a href=\"?page=learning\">Lernen</a> &raquo; Karteikästen");
 
+        /* Setting up Boxes and adding unsorted Box (id = 0)*/
         $boxes = $this->GetBoxesByLanguagePair($languagePairId);
-
         $box_unsorted = array("name" => "Unsortiert", "box_id" => 0);
         array_unshift($boxes, $box_unsorted);
 
@@ -52,7 +51,9 @@ class LearningController extends ApplicationController {
             $boxes[$key]['levels'] = $levels;
         }
 
+        /* Adding elements to View */
         $this->view->assign("boxes", $boxes);
+        $this->SetHeadline($this->MakeHeadlineByLanguagePair($languagePairId, $languageId));
         $this->Display("templates/common/BoxesView.php");
     }
 
@@ -71,6 +72,7 @@ if(_LANGUAGE) {
         $Controller->DisplayBoxesByLanguage(_LANGUAGE_PAIR, _LANGUAGE);
     }
 } else {
+    $Controller->SetHeadline("Leck die Wurst");
     $Controller->DisplayLanguages();
 }
 

@@ -13,7 +13,6 @@
 {block name="content"}
     <section class="row">
         <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
-
             <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
             {foreach from=$data item=item key=key}
                 {* TODO: Use Smarty first item instead key == 0 *}
@@ -32,6 +31,7 @@
                     <div class="lined front">
                         <h3>{$item.front}</h3>
                         <p></p>
+                        <span class="glyphicon glyphicon-share-alt flip"></span>
                     </div>
                     <div class="lined back">
                         <h3>{$item.back}</h3>

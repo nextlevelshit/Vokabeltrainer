@@ -84,7 +84,7 @@
     </div>
 </header>
 
-<article class="container">
+<article class="container headline">
     <div class="row">
             <div class="col-xs-12">
             <p>{block name="text"}Willkommen bei deinem Vokabeltrainer. Links gelangst du gleich zu deinen Karteikarten und rechts kannst du sie bearbeiten oder neue hinzufügen. {/block}</p>

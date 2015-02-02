@@ -88,6 +88,17 @@ a:focus {
     border-radius: 6px;
 }
 
+.headline img {
+    max-height: 1.5em;
+    width: auto;
+}
+
+hr {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-top: 2px solid rgba(0,0,0,0.3);
+    margin: 5px 0;
+}
+
 /*
  *
  * Header
@@ -356,15 +367,17 @@ html.mm-opening #hamburger:after
  * Sprachenwahl
  ************************/
 
-.languages a {
+.languages a,
+.greybox .greybox__title {
     font-size: 1.2em;
     text-shadow: 1px 1px 0 rgba(0,0,0,0.5)
                  2px 2px 0 rgba(0,0,0,0.5),
                  3px 3px 0 rgba(0,0,0,0.4);
 }
 
-.languages a img {
-    max-height: 2em;
+.languages a img,
+.greybox .greybox__title a img {
+    max-height: 1.5em;
     width: auto;
 }
 
@@ -407,6 +420,10 @@ html.mm-opening #hamburger:after
 
 .levels ul li a span {
     opacity: 0.6;
+}
+
+.levels ul li a span.glyphicon {
+    margin-right: 5px;
 }
 
 /* Buttons */
@@ -840,10 +857,20 @@ ul.search__list li a {
     display: inline-block;
 }
 
+.card span.flip {
+    bottom: 0;
+    color: #a0a0a0;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px;
+    position: absolute;
+    right: 0;
+    top: auto;
+}
+
 .card button#correct {
         right: 0;
     color: #3e8f3e;
-
 }
 
 .card button#false {
@@ -908,6 +935,12 @@ ul.search__list li a {
     box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
 }
 
+a.greybox:hover {
+    background: rgba(0,0,0,0.4);
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5);
+    color: #fff;
+}
+
 /*
  *
  * Panels
@@ -918,6 +951,10 @@ ul.search__list li a {
     border: none;
     background: transparent;
     border-color: rgba(255,255,255,0.4)
+}
+
+.greybox .panel-default .panel-group {
+    margin: 0;
 }
 
 .greybox .panel-default .panel-body {
@@ -932,7 +969,7 @@ ul.search__list li a {
     z-index: 200;
 }
 
-.greybox .panel-default .panel-heading::before {
+.greybox .panel-default .panel-heading a::before {
     content: "";
     background-color: #119094;
     border-radius: 5px;
@@ -944,11 +981,11 @@ ul.search__list li a {
     z-index: -1;
 }
 
-.greybox .panel-default .panel-default .panel-heading::before {
+.greybox .panel-default .panel-default .panel-heading a::before {
     opacity: 0.3;
 }
 
-.greybox .panel-default .panel-heading::after {
+.greybox .panel-default .panel-heading a::after {
     content: "";
     background: url("../img/symphony.png");
     border-radius: 5px;
@@ -961,8 +998,9 @@ ul.search__list li a {
     z-index: -1;
 }
 
-.greybox .panel-default .panel-heading:hover::after {
-    opacity: 0.8;
+.greybox .panel-default .panel-heading a:hover::after {
+/*.greybox .panel-default .panel-heading a.collapsed::after {*/
+    opacity: 0.6;
 }
 
 .greybox .panel-default .panel-heading a:hover,

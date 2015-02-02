@@ -4,7 +4,10 @@
     {$breadcrumb}
 {/block}
 
-{block name="text"}{/block}
+{block name="text"}
+    <h3>{$headline}</h3>
+
+{/block}
 
 {block name="content"}
     <section class="languages">
@@ -42,7 +45,7 @@
                         <div id="collapse_pair_{$i}" class="panel-collapse collapse {if $isFirst}in{/if}" role="tabpanel" aria-labelledby="heading_pair_{$i}">
                             <div class="panel-body list-group">
                                 <div class="panel-group levels" id="accordion_boxes" role="tablist" aria-multiselectable="true">
-                                    <h3>{$box.name}</h3>
+                                    {*<h3>{$box.name}</h3>*}
                                     <ul class="levels__list">
                                     {foreach from=$box.levels item=level}
                                         <li>
