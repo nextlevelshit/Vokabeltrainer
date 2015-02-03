@@ -48,6 +48,12 @@ class ApplicationController {
         return $this->sql->data;
     }
 
+    public function GetBoxNameById ($boxId) {
+        $boxName = $this->sql->get("name", "SELECT `name` FROM `boxes` WHERE `box_id` = '$boxId'");
+        if (!$boxName) $boxName = "Unsortiert";
+        return $boxName;
+    }
+
     /*
      *
      * SET

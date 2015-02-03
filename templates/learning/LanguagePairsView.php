@@ -20,6 +20,7 @@
                             <img src="{$pair.translation_flag}" />
                             {$pair.translation_language}
                         </div>
+                        <hr>
                     </div>
                     <hr/>
                     <div class="row">

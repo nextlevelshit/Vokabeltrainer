@@ -29,15 +29,25 @@ class EditingController extends ApplicationController {
         $this->Display("templates/editing/LanguagePairsView.php");
     }
 
+    function DisplayCardsToAdd() {
+        $this->SetHeadline("Neue Karteikarten hinzufügen");
+        $this->Display("templates//LanguagePairsView.php");
+    }
+
 }
 
 $Controller = new EditingController();
 
-if(_EDIT) {
-    if(_EDIT == "") {
-        $Controller->DisplayCards(_LANGUAGE_PAIR, _LANGUAGE, _BOX, _LEVEL);
-    } else {
-        $Controller->DisplayBoxesByLanguage(_LANGUAGE_PAIR, _LANGUAGE);
+if(_TARGET) {
+    if(_TARGET == "cards") {
+        if (_ACTION == "edit") {
+
+        } elseif (_ACTION == "save") {
+
+        }
+//        $Controller->DisplayCards(_LANGUAGE_PAIR, _LANGUAGE, _BOX, _LEVEL);
+    } elseif (_TARGET == "boxes") {
+//        $Controller->DisplayBoxesByLanguage(_LANGUAGE_PAIR, _LANGUAGE);
     }
 } else {
     $Controller->DisplayLanguagePairs();

@@ -10,17 +10,19 @@ $(function() {
         $(this).find("ul").removeClass("active");
     });
 
-
     card_flipped = false;
-    $(document).keyup(function( event ){
+    stats_false = 0;
+    stats_correct = 0;
+    //stats_total = 0;
+    status_current = 0;
 
+    $(document).keyup(function( event ){
 
         /*if($(".card.active").hasClass('hover')) {
             card_flipped = true;
         } else {
             var card_flipped = false;
         }*/
-
 
         if(event.keyCode == 13) { // Press Return
             if(card_flipped) { // Card has already flipped
@@ -61,12 +63,16 @@ $(function() {
         // Hide card and show new one
         $("#"+current_id).removeClass("active").addClass("hidden").addClass(answer);
         $("#card_"+next_num).removeClass("hidden").addClass("active");
-        $("#current_card_num").html(next_num + 1);
+        //$("#current_card_num").html(next_num + 1);
+
 
         // Save answer to card
         $("#"+current_id).attr("data-word-answer", answer);
 
         //$("#puffer").removeClass("fade");
+
+        // Update stats
+
 
         // SQL Request
         $.ajax({
@@ -74,6 +80,10 @@ $(function() {
             context: document.body
         }).done(function(data) {
             console.log(data);
+            if (answer == "correct") stats_correct += 1;
+            if (answer == "false") stats_false += 1;
+            console.log("STATS: false " + stats_false + "/ correct " + stats_correct + " / current " + current_num + " of " + stats_total);
+
             // Show puffer
             //$("#puffer")
 
@@ -83,7 +93,51 @@ $(function() {
                 // Hide puffer
                 $("#puffer").addClass("hidden");
             }, 2000);*/
+        }).error(function() {
+            alert("Es ist ein Fehler beim Speichern deiner Ergebnisse aufgetreten. Bitte lade die Seite neu");
         });
+
+        if (stats_total > next_num) {
+            updateProgressBar (next_num, stats_total, stats_correct, stats_false);
+        } else {
+            displayStats (stats_total, stats_correct, stats_false);
+        }
+
+        function updateProgressBar(current, total, correct, wrong) {
+            $("#stats_current").html(current + 1);
+        }
+
+        function displayStats (total, correct, wrong) {
+            $("#stats").fadeIn();
+            var percent = Math.floor((correct/total)*100)/100;
+            randomize (percent);
+            //console.log("STATS: false " + wrong + "/ correct " + correct + " / total " + total);
+
+            //console.log(Math.floor((correct/total)*100)/100);
+        }
+
+        function randomize (percent) {
+            var transform_styles = ['-webkit-transform', '-ms-transform', 'transform'];
+            var percent_floor = Math.floor(percent * 100);
+            var rotation = Math.floor(percent * 180);
+            var fill_rotation = rotation;
+            var fix_rotation = rotation * 2;
+
+            delay(0, percent_floor);
+
+            function delay(percent_current, percent_floor) {
+
+                $('.inset__percent').html(percent_current + "%");
+                if (percent_current < percent_floor) {
+                    setTimeout(function() { delay(percent_current + 1, percent_floor); }, 10);
+                }
+            }
+
+            for (i in transform_styles) {
+                $('.circle .fill, .circle .mask.full').css(transform_styles[i], 'rotate(' + fill_rotation + 'deg)');
+                $('.circle .fill.fix').css(transform_styles[i], 'rotate(' + fix_rotation + 'deg)');
+            }
+        }
 
         //console.log(level);
 

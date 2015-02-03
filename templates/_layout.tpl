@@ -7,19 +7,21 @@
     <!-- CSS -->
     {*<link rel="stylesheet" href="assets/css/bootstrap.css"/>*}
     {*<link rel="stylesheet" href="assets/css/GGS.css"/>*}
-    <link rel="stylesheet" href="assets/css/bootstrap.3.2.0.min.css">
-    <link rel="stylesheet" href="assets/css/jquery.mmenu.all.css"/>
-    <link rel="stylesheet" href="assets/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.3.2.0.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.mmenu.all.css"/>
+    {*<link rel="stylesheet" href="assets/css/styles.css"/>*}
+    <link rel="stylesheet/less" type="text/css" href="assets/css/styles.less" />
     <!-- JS -->
     <!--<script src="assets/js/GGS.js"></script>-->
-    <script src="assets/js/jquery-2.1.1.min.js"></script>
-    <script src="assets/js/jquery.1.12.0-pre.js"></script>
-    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="assets/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.1.12.0-pre.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
     <!--<script src="assets/js/bootstrap.min.js"></script>-->
-    <script src="assets/js/bootstrap.3.2.0.min.js"></script>
-    <script src="assets/js/scripts.js"></script>jquery
-    <script src="assets/js/jquery.mmenu.min.js"></script>
-    <script src="assets/js/jquery.matchHeight.min.js"></script>
+    <script src="assets/js/less.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.3.2.0.min.js" type="text/javascript"></script>
+    <script src="assets/js/scripts.js" type="text/javascript"></script>jquery
+    <script src="assets/js/jquery.mmenu.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.matchHeight.min.js" type="text/javascript"></script>
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

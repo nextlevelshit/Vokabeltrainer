@@ -10,6 +10,7 @@ define("DEBUG",             (boolean) $_REQUEST['debug']);
 
 define("_PAGE",             (string) $_REQUEST['page']);
 define("_ACTION",           (string) $_REQUEST['action']);
+define("_TARGET",           (string) $_REQUEST['target']);
 define("_EDIT",             (string) $_REQUEST['edit']);
 define("_LANGUAGE",         (int) $_REQUEST['lang']);
 define("_LANGUAGE_PAIR",    (int) $_REQUEST['languagePair']);

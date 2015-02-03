@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-02-02 18:08:51
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-02-03 19:18:19
          compiled from "templates/cards.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8205595254529fa7b3fe66-66301835%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ebfc53871d7e8f4ec0f2f455926384d80be09f3c' => 
     array (
       0 => './templates/_layout.tpl',
-      1 => 1422802246,
+      1 => 1422901050,
       2 => 'file',
     ),
   ),
@@ -144,7 +144,7 @@ x gelernt
     </div>
 </header>
 
-<article class="container">
+<article class="container headline">
     <div class="row">
             <div class="col-xs-12">
             <p>

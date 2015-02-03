@@ -172,17 +172,28 @@ header {
     background: linear-gradient(to bottom,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#33000000',GradientType=0 );*/
     background: rgba(0,0,0,0.7);
-    /*height: 2em;*/
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 10px 40px rgba(255,255,255,0.1);
+    /*height: 3em;*/
     padding: 0.7em;
     /*position: fixed;*/
     width: 100%;
     /*top: 3em;*/
 }
     .header__shadow h3 {
-        font-size: 0.8em;
-        font-weight: 100;
-        margin: 0;
+        font-size: 1.2em;
+        font-weight: 700;
+        margin: auto 0;
+        padding: 0.8em 0;
     }
+
+        .header__shadow h3 img {
+            display: inline-block;
+            height: 1.2em;
+            width: auto;
+            padding-bottom: 0.1em;
+            /*vertical-align: baseline;*/
+        }
 
 
  /*
@@ -387,6 +398,20 @@ html.mm-opening #hamburger:after
     margin-top: 0;
 }
 
+.levels .levels__title {
+    height: 2.6em;
+    overflow: hidden;
+}
+
+    .levels .levels__title span {
+        display: block;
+        color: rgba(0,0,0,0.5);
+        font-size: 2.4em;
+        font-weight: 700;
+        margin-top: 0.04em;
+        text-transform: uppercase;
+    }
+
 .levels ul {
     margin: 0;
     padding: 0;
@@ -418,7 +443,8 @@ html.mm-opening #hamburger:after
 }
 
 
-.levels ul li a span {
+.levels ul li a span,
+.text-secondary {
     opacity: 0.6;
 }
 
@@ -958,7 +984,8 @@ a.greybox:hover {
 }
 
 .greybox .panel-default .panel-body {
-    padding: 10px 0;
+    /*padding: 10px 0;*/
+    padding: 0;
 }
 
 .greybox .panel-default .panel-heading {
@@ -1006,6 +1033,7 @@ a.greybox:hover {
 .greybox .panel-default .panel-heading a:hover,
 .greybox .panel-default .panel-heading a:focus {
     color: #fff;
+    text-decoration: none;
 }
 
 .greybox .panel-default .panel-collapse>.panel-body {
