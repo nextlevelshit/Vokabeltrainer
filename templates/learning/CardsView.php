@@ -57,7 +57,7 @@
                                     {$item.synonym_translation}
                                 </p>
                             {/if}
-                            {if $item.antonym_translation}
+                            {if $item.bbantonym_translation}
                                 <p class="antonym">
                                     <span class="glyphicon glyphicon-flash"></span>
                                     <!--<span>[ant.]</span>-->
@@ -95,25 +95,38 @@
                         </center>
                     </div>
                 </div>*}
-                <div id="stats" class="radial-progress" style="display: none;">
-                    <div class="circle">
-                        <div class="mask full">
-                            <div class="fill"></div>
-                        </div>
-                        <div class="mask half">
-                            <div class="fill"></div>
-                            <div class="fill fix"></div>
-                        </div>
-                        <div class="shadow"></div>
-                    </div>
-                    <div class="inset">
-                        <div class="inset__percent">test</div>
-                    </div>
-                </div>
             </div>
             <div class="col-xs-12">
+                <div id="stats" style="display: none;">
+                    <h2 class="text-center result"></h2>
+                    <div class="doublemargin"></div>
+                    <div class="radial-progress">
+                        <div class="circle">
+                            <div class="mask full">
+                                <div class="fill"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill"></div>
+                                <div class="fill fix"></div>
+                            </div>
+                            <div class="shadow"></div>
+                        </div>
+                        <div class="inset">
+                            <div class="inset__percent">test</div>
+                        </div>
+                    </div>
+                    <div class="doublemargin"></div>
+                    <p class="text-center">
+                        Du hast <strong class="correct">0</strong> von <strong class="sum">0</strong> Karten richtig beantwortet.
+                    </p>
+                </div>
+
+            </div>
+            <div id="options">
                 <div class="doublemargin"></div>
                 <div class="text-center"><span id="stats_current">1</span> von <span id="stats_total">{$cards_num}</span></div>
+                <div class="doublemargin"></div>
+                <button id="abort" class="btn btn-transparent" >Abbrechen</button>
             </div>
         </div>
     </section>

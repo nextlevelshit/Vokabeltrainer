@@ -1,6 +1,10 @@
 /**
  * Created by nextlevelshit on 25.10.14.
  */
+
+$( window ).unload(function() {
+    alert("test");
+});
 $(function() {
     $("li.dropdown").hover(function(){
         $(this).find("ul").addClass("active");
@@ -103,41 +107,7 @@ $(function() {
             displayStats (stats_total, stats_correct, stats_false);
         }
 
-        function updateProgressBar(current, total, correct, wrong) {
-            $("#stats_current").html(current + 1);
-        }
 
-        function displayStats (total, correct, wrong) {
-            $("#stats").fadeIn();
-            var percent = Math.floor((correct/total)*100)/100;
-            randomize (percent);
-            //console.log("STATS: false " + wrong + "/ correct " + correct + " / total " + total);
-
-            //console.log(Math.floor((correct/total)*100)/100);
-        }
-
-        function randomize (percent) {
-            var transform_styles = ['-webkit-transform', '-ms-transform', 'transform'];
-            var percent_floor = Math.floor(percent * 100);
-            var rotation = Math.floor(percent * 180);
-            var fill_rotation = rotation;
-            var fix_rotation = rotation * 2;
-
-            delay(0, percent_floor);
-
-            function delay(percent_current, percent_floor) {
-
-                $('.inset__percent').html(percent_current + "%");
-                if (percent_current < percent_floor) {
-                    setTimeout(function() { delay(percent_current + 1, percent_floor); }, 10);
-                }
-            }
-
-            for (i in transform_styles) {
-                $('.circle .fill, .circle .mask.full').css(transform_styles[i], 'rotate(' + fill_rotation + 'deg)');
-                $('.circle .fill.fix').css(transform_styles[i], 'rotate(' + fix_rotation + 'deg)');
-            }
-        }
 
         //console.log(level);
 
@@ -157,6 +127,66 @@ $(function() {
 
         //console.log(answer + card_id + box_id);
     });
+
+    function updateProgressBar(current, total, correct, wrong) {
+        $("#stats_current").html(current + 1);
+    }
+
+    function displayStats (total, correct, wrong) {
+        $(".flip-container, #options").hide();
+        $("#stats").fadeIn();
+        var sum = correct + wrong;
+        var percent = Math.floor((correct/sum)*100)/100;
+
+        $("#stats .correct").html(correct);
+        $("#stats .sum").html(sum);
+
+        randomize (percent);
+        //console.log("STATS: false " + wrong + "/ correct " + correct + " / total " + total);
+
+        //console.log(Math.floor((correct/total)*100)/100);
+    }
+
+    function randomize (percent) {
+        var transform_styles = ['-webkit-transform', '-ms-transform', 'transform'];
+        var percent_floor = Math.floor(percent * 100);
+        var rotation = Math.floor(percent * 180);
+        var fill_rotation = rotation;
+        var fix_rotation = rotation * 2;
+
+        if(percent_floor >= 50) {
+            $('.circle .fill').addClass('excellent');
+            $('#stats .result').html('Hervorragend!');
+        } else if (percent_floor >= 30) {
+            $('.circle .fill').addClass('good');
+            $('#stats .result').html('Ganz gut!');
+        } else if(percent_floor < 30) {
+            $('.circle .fill').addClass('bad');
+            $('#stats .result').html('Du solltest noch ein bisschen üben!');
+        }
+
+        delay(0, percent_floor);
+
+        function delay(percent_current, percent_floor) {
+
+            $('.inset__percent').html(percent_current + "%");
+            if (percent_current < percent_floor) {
+                setTimeout(function() { delay(percent_current + 1, percent_floor); }, 10);
+            }
+        }
+
+        for (i in transform_styles) {
+            $('.circle .fill, .circle .mask.full').css(transform_styles[i], 'rotate(' + fill_rotation + 'deg)');
+            $('.circle .fill.fix').css(transform_styles[i], 'rotate(' + fix_rotation + 'deg)');
+        }
+    }
+
+    $("#abort").click(function() {
+        //alert(stats_total);
+        displayStats (stats_total, stats_correct, stats_false);
+    });
+
+
 
 
     // Submit new cards

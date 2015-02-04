@@ -713,7 +713,7 @@ ul.search__list li a {
   /*box-shadow: 4px 4px 5px rgba(0,0,0,0.5); */
 
   /*border-radius: 6px;*/
-  padding: 2em 3em;
+  padding: 0 3em 2em 3em;
 }
 
 .lined a {
@@ -728,7 +728,7 @@ ul.search__list li a {
 .card .front,
 .card .back {
   width: 100%;
-
+  display: table;
 }
 
 .card .card__shadow {
@@ -749,8 +749,9 @@ ul.search__list li a {
 .card .front h3,
 .card .back h3 {
   text-align: center;
-  display: block;
-  font-size: 1.3em;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1.5em;
   margin: 0.5em 0 0.6em;
 }
 
@@ -758,6 +759,7 @@ ul.search__list li a {
 .card .antonym {
   text-align: center;
   font-size: 0.8em;
+  display: table-cell;
 }
 
 .card .synonym span,
@@ -1099,17 +1101,20 @@ ul.list__sortable.list__sortable__hover {
 
 .radial-progress {
   @circle-size: 120px;
-  @circle-background: #d6dadc;
-  @circle-color: #97a71d;
-  @inset-size: 60px;
+  @circle-background: rgba(0,0,0,0.3);
+  @circle-color-excellent: #97a71d;
+  @circle-color-good: #d6ce06;
+  @circle-color-bad: #a71d1d;
+  @inset-size: 80px;
   @inset-color: #fbfbfb;
   @transition-length: 1s;
-  @shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+  @shadow: 6px 6px 10px rgba(0, 0, 0, 0.6);
   margin: 0 auto;
   width: @circle-size;
   height: @circle-size;
   background-color: @circle-background;
   border-radius: 50%;
+  box-shadow: 0 0 40px black;
   .circle {
     .mask, .fill, .shadow {
       width: @circle-size;
@@ -1130,7 +1135,9 @@ ul.list__sortable.list__sortable__hover {
       clip: rect(0px, @circle-size, @circle-size, @circle-size/2);
       .fill {
         clip: rect(0px, @circle-size/2, @circle-size, 0px);
-        background-color: @circle-color;
+        &.excellent { background-color: @circle-color-excellent; }
+        &.good { background-color: @circle-color-good; }
+        &.bad { background-color: @circle-color-bad; }
       }
     }
   }
